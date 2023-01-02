@@ -1,6 +1,6 @@
 
 ### Welcome 👋
-This is my extension built with Buildspace's project [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer) project. 
+This is my extension built with Buildspace's project [build your own AI writing assistant w/ GPT-3](https://buildspace.so/builds/ai-writer). 
 
 <hr>
 
