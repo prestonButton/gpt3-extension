@@ -53,6 +53,21 @@ const generateCompletionAction = async (info) => {
 
     // Let's see what we get!
     console.log(baseCompletion.text);
+
+    // Add your second prompt here
+    const secondPrompt = `
+      Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+      
+      Title: ${selectionText}
+      
+      Table of Contents: ${baseCompletion.text}
+      
+      Blog Post:
+      `;
+
+    // Call your second prompt
+    const secondPromptCompletion = await generate(secondPrompt);
+    console.log(secondPromptCompletion.text);
   } catch (error) {
     console.log(error);
   }
