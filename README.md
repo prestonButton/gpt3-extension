@@ -4,8 +4,8 @@ This is my extension built with Buildspace's project [build your own AI writing 
 
 <hr>
 
-<h3>Install<h3>
-1. Clone this repo to your machine (or download the zip file).
+<h3>Install</h3>
+<p>1. Clone this repo to your machine (or download the zip file).
 
 2. In your chromium based browser, go to the extensions page and hit the toggle to turn on developer mode
 
@@ -15,6 +15,6 @@ This is my extension built with Buildspace's project [build your own AI writing 
 
 **This works best to use this extension to generate tweets in a third party editor such as Calmly right now, but soon will be able to generate directly in twitter**
 
-LMK if you have any input!!! 💪🏼💪🏼💪🏼
+LMK if you have any input!!! 💪🏼💪🏼💪🏼</P>
 
 
