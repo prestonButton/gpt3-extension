@@ -1,4 +1,3 @@
-
 // Function to get + decode API key
 const getKey = () => {
   return new Promise((resolve, reject) => {
@@ -31,27 +30,27 @@ const sendMessage = (content) => {
 const generate = async (prompt) => {
   // Get your API key from storage
   const key = await getKey();
-  const url = 'https://api.openai.com/v1/completions';
-	
+  const url = "https://api.openai.com/v1/completions";
+
   // Call completions endpoint
   const completionResponse = await fetch(url, {
-    method: 'POST',
+    method: "POST",
     headers: {
-      'Content-Type': 'application/json',
+      "Content-Type": "application/json",
       Authorization: `Bearer ${key}`,
     },
     body: JSON.stringify({
-      model: 'text-davinci-003',
+      model: "text-davinci-003",
       prompt: prompt,
       max_tokens: 1250,
       temperature: 0.7,
     }),
   });
-	
+
   // Select the top choice and send back
   const completion = await completionResponse.json();
   return completion.choices.pop();
-}
+};
 
 const generateCompletionAction = async (info) => {
   try {
@@ -60,7 +59,7 @@ const generateCompletionAction = async (info) => {
 
     const { selectionText } = info;
     const basePromptPrefix = `
-      Write me a detailed table of contents for a blog post with the title below.
+      Write me a detailed table of contents for a Twitter thread with the title below.
       
       Title:
       `;
@@ -70,13 +69,13 @@ const generateCompletionAction = async (info) => {
     );
 
     const secondPrompt = `
-        Take the table of contents and title of the blog post below and generate a blog post written in thwe style of Paul Graham. Make it feel like a story. Don't just list the points. Go deep into each one. Explain why.
+        Take the table of contents and title of the twitter thread below and generate a twitter thread written in the style of Trung Phan. Don't just list the points. Go deep into each one. Explain why.
         
         Title: ${selectionText}
         
         Table of Contents: ${baseCompletion.text}
         
-        Blog Post:
+        Twitter thread:
 		  `;
 
     const secondPromptCompletion = await generate(secondPrompt);
